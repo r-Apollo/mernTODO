@@ -1,10 +1,10 @@
 import express from "express";
-import { checkRoute, addTodo } from "../controller/todo.js";
+import { addTodo, getAllTasks } from "../controller/todo.js";
 
 const router = express.Router();
 
 //GET REQUESTS
-router.get("/", checkRoute)
+router.get("/", getAllTasks)
 
 //POST REQUESTS
 router.post("/", addTodo)

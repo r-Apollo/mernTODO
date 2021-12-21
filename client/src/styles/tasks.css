@@ -1,0 +1,31 @@
+.tasklist {
+    display: flex;
+    flex-direction: column;
+
+    padding: .2em .4em;
+
+    gap: .3em;
+}
+
+.btn {
+    border-style: none;
+
+    text-align: left;
+    font-size: 1.4em;
+
+    background-color: #eee;
+}
+
+.btn:hover {
+    background-color: #ddd;
+
+    cursor: pointer;
+}
+
+.add.btn {
+    background-color: #e9e9ed;
+}
+
+.add.btn:hover {
+    background-color: #ddd;
+}

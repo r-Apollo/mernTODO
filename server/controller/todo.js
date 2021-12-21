@@ -11,8 +11,10 @@ mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser:true,
 })
 
-//Checks if this branch is running.
-export const checkRoute = (req, res) => res.send("Working")
+//gets tasks from the DB
+export const getAllTasks = async (req, res) => {
+    res.send(await TodoModel.find({}))
+}
 
 
 //adds a Task to the DB
