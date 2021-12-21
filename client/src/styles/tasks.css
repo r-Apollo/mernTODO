@@ -1,12 +1,14 @@
 .tasklist {
     display: flex;
     flex-direction: column;
+    gap: .3em;
 
     padding: .2em .4em;
 
-    gap: .3em;
+    width: 70%;
 }
 
+.adding input,
 .btn {
     padding: .3em .8em;
 
@@ -14,7 +16,7 @@
     border-radius: 6px;
 
     text-align: left;
-    font-size: 1.4em;
+    font-size: 1.2em;
 
     background-color: #eee;
 }
@@ -31,4 +33,46 @@
 
 .add.btn:hover {
     background-color: #ddd;
+}
+
+.adding input {
+    border: 1px solid #aaa;
+}
+
+.add.btn div {
+    display: flex;
+    gap: .3em;
+
+    font-size: 1.2em;
+}
+
+.add.btn div i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.adding {
+    display: flex;
+    flex-direction: column;
+    gap: .3em;
+}
+
+.controlls {
+    display: flex;
+    gap: .3em;
+}
+
+.controlls button {
+    flex: 1 1;
+
+    text-align: center;
+}
+
+.addTask {
+    background-color: #aaffaa;
+}
+
+.cancel {
+    background-color: #ffbebe;
 }

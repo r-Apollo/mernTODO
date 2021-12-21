@@ -1,0 +1,49 @@
+.task {
+    display: flex;
+    justify-content: space-between;
+}
+
+div .task.btn {
+    cursor: default;
+}
+
+.left {
+    display: flex;
+    gap: .3em;
+}
+
+.left i:hover {
+    color: #5bfd5b;
+}
+
+.right i,
+.left i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+.inner-btn {
+    border-style: none;
+
+    font-size: 1.2em;
+
+    background: none;
+
+    cursor: pointer;
+    z-index: 10;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.2em;
+}
+
+.right i:hover {
+    color: #fd4646;
+}

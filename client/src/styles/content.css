@@ -4,6 +4,8 @@ div.content {
     flex: 5 1 0%;
     display: flex;
 
+    margin-bottom: 5em;
+
     background-color: #eee;
 }
 
