@@ -7,6 +7,7 @@ const Tasks = () => {
     const [fetchedTasks, updateFetchedTasks] = useState([])
     const [addActivated, setAddActivated] = useState(false)
 
+    //fetching data from the server
     const fetchTasks = async () => {
         const res = await Axios.get("http://localhost:5000/todo")
         updateFetchedTasks(res.data)
