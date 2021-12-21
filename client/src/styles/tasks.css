@@ -8,7 +8,10 @@
 }
 
 .btn {
+    padding: .3em .8em;
+
     border-style: none;
+    border-radius: 6px;
 
     text-align: left;
     font-size: 1.4em;
