@@ -1,0 +1,7 @@
+i.finished {
+    color: #5bfd5b;
+}
+
+i.finished:hover {
+    color: #000;
+}

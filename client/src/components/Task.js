@@ -1,11 +1,11 @@
 import React from "react";
 import "../styles/task.css"
 
-const Task = ({task, deleteTask}) => {
+const Task = ({task, deleteTask, finishTask}) => {
     return(
             <div className="btn task">
                 <div className="left">
-                    <i className="far fa-circle" onClick={() => console.log("clickable i")}></i>
+                    <i className="far fa-circle" onClick={() => finishTask(task._id)}></i>
                     {/*This btn will update taskname */}
                     <button className="inner-btn" onClick={() => console.log("update")}>{task.taskName}</button>
                 </div>

@@ -16,8 +16,20 @@ export const getAllTasks = async (req, res) => {
     res.send(await TodoModel.find({}))
 }
 
+export const getUnfinishedTasks = async (req, res) => {
+    res.send(await TodoModel.find({
+        taskDone:false,
+    }))
+}
 
-//adds a Task to the DB
+export const getFinishedTasks = async (req, res) => {
+    res.send(await TodoModel.find({
+        taskDone:true,
+    }))
+}
+
+
+//adds a task to the DB
 export const addTodo = async (req, res) => {
     const todo = new TodoModel({
         taskName: req.body.name,
@@ -25,6 +37,42 @@ export const addTodo = async (req, res) => {
     })
     await todo.save()
     res.send("Succes")
+}
+
+
+//updates the taskDone to true.
+export const updateTaskDone = async (req, res) => {
+    const doc = await TodoModel.findOne({
+        _id:req.body._id
+    })
+    await doc.updateOne({taskDone:true})
+    res.send(await TodoModel.findOne({
+        _id:req.body._id
+    }))
+}
+
+//updares the taskDone to false
+export const updateTaskNotDone = async (req, res) => {
+    const doc = await TodoModel.findOne({
+        _id:req.body._id
+    })
+    await doc.updateOne({taskDone:false})
+    res.send(await TodoModel.findOne({
+        _id:req.body._id
+    }))
+}
+
+//updates the taskName
+export const updateTaskName = async (req, res) => {
+    const doc = await TodoModel.findOne({
+        _id:req.body._id,
+    })
+    await doc.updateOne({
+        taskName:req.body.taskName,
+    })
+    res.send(await TodoModel.findOne({
+        _id:req.body._id
+    }))
 }
 
 

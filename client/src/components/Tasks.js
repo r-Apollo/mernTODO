@@ -10,7 +10,7 @@ const Tasks = () => {
 
     //fetching data from the server
     const fetchTasks = async () => {
-        const res = await Axios.get("http://localhost:5000/todo")
+        const res = await Axios.get("http://localhost:5000/todo/unfinished")
         updateFetchedTasks(res.data)
     }
 
@@ -26,6 +26,14 @@ const Tasks = () => {
         } else {
             alert("Taskname is not allowed to be empty.")
         }
+    }
+
+    //finishing a task
+    const finishTask = async (_id) => {
+        await Axios.patch("http://localhost:5000/todo/done", {
+            _id:_id
+        })
+        fetchTasks()
     }
 
     //removing task from the db
@@ -47,13 +55,12 @@ const Tasks = () => {
     useEffect(() => {fetchTasks()}, [])
 
     //on adding new Data
-    useEffect(() => {
-    }, [fetchedTasks, addActivated])
+    useEffect(() => {}, [fetchedTasks, addActivated])
 
     if (!addActivated) {
         return(
             <div className="tasklist">
-                {fetchedTasks.map(task => <Task task={task} deleteTask={deleteTask} key={task._id} />)}
+                {fetchedTasks.map(task => <Task task={task} deleteTask={deleteTask} finishTask={finishTask} key={task._id} />)}
                 <button className="add btn" onClick={() => toggleAddButton()}>
                     <div>
                         <i className="fas fa-plus"></i>
@@ -65,7 +72,7 @@ const Tasks = () => {
     } else {
         return(
             <div className="tasklist">
-                {fetchedTasks.map(task => <Task task={task} key={task._id} deleteTask={deleteTask} />)}
+                {fetchedTasks.map(task => <Task task={task} key={task._id} deleteTask={deleteTask} finishTask={finishTask} />)}
                 <div className="adding">
                     <input type="text" placeholder="Task name" className="input" onChange={(event) => setInputedTask(event.target.value)}></input>
                     <div className="controlls">

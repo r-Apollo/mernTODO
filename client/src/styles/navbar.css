@@ -1,5 +1,52 @@
 .navbar {
     flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .4em;
 
     background-color: #ddd;
+}
+
+.nav-btn {
+    display: flex;
+    align-items: center;
+    gap: .5em;
+
+    padding: .5em;
+
+    font-size: 1.1em;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+
+    border-style: none;
+    border-radius: 6px;
+    background: none;
+
+    cursor: pointer;
+    width: 90%;
+}
+
+.nav-btn:hover {
+    font-weight: 500;
+
+    background-color: #ccc;
+}
+
+.nav-btn.active {
+    font-weight: 500;
+
+    background-color: #ccc;
+}
+
+.nav-btn.top {
+    margin-top: 1em;
+}
+
+.nav-btn i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: .8em;
 }
